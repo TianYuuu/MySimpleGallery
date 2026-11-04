@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_holder"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.simplemobiletools.commons.views.MyViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <include
+        android:id="@+id/bottom_actions"
+        layout="@layout/bottom_actions" />
+
+    <!-- thumbnail strip, sits right above whatever is at the very bottom -->
+    <com.simplemobiletools.gallery.pro.views.ViewerThumbnailStripLayout
+        android:id="@+id/viewer_thumbnail_strip_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/viewer_strip_background">
+
+        <com.simplemobiletools.gallery.pro.views.ScaledTouchRecyclerView
+            android:id="@+id/viewer_thumbnail_strip"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/viewer_thumbnail_strip_height"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:paddingTop="20dp"
+            android:paddingBottom="4dp"
+            android:scrollbars="none" />
+
+        <!-- thin grabber above the thumbnails, tapping it opens the fullscreen grid -->
+        <FrameLayout
+            android:id="@+id/viewer_thumbnail_strip_handle"
+            android:layout_width="160dp"
+            android:layout_height="20dp"
+            android:layout_gravity="top|center_horizontal"
+            android:background="?attr/selectableItemBackground">
+
+            <View
+                android:layout_width="32dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:background="@drawable/viewer_strip_handle" />
+
+        </FrameLayout>
+
+    </com.simplemobiletools.gallery.pro.views.ViewerThumbnailStripLayout>
+
+    <!-- bare "3/42", always visible at the bottom of the photo and never moving with the strip -->
+    <TextView
+        android:id="@+id/viewer_page_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:paddingStart="@dimen/medium_margin"
+        android:paddingEnd="@dimen/medium_margin"
+        android:textColor="@color/viewer_page_indicator_text_color"
+        android:textSize="@dimen/smaller_text_size"
+        android:visibility="gone"
+        tools:text="3/42" />
+
+    <ImageView
+        android:id="@+id/top_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_status_action_height"
+        android:background="@drawable/gradient_background_flipped"
+        android:contentDescription="@null" />
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/medium_viewer_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/transparent"
+        android:elevation="0dp"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/medium_viewer_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:menu="@menu/menu_viewpager"
+            app:navigationIcon="@drawable/ic_arrow_left_vector" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+</RelativeLayout>

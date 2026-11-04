@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="crop_image_view_background">#BB000000</color>
+    <color name="circle_black_background">#66000000</color>
+    <!-- page number over the photo: just a hint, no pill behind it -->
+    <color name="viewer_page_indicator_text_color">#6654A3FF</color>
+</resources>

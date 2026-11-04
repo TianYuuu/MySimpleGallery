@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.github.duolingo</groupId>
+  <artifactId>rtl-viewpager</artifactId>
+  <version>940f12724f</version>
+  <packaging>jar</packaging>
+  <dependencies>
+    <dependency>
+      <groupId>androidx.viewpager</groupId>
+      <artifactId>viewpager</artifactId>
+      <version>1.1.0</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+</project>
